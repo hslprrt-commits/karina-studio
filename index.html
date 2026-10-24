@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090711">
+  <meta name="description" content="Karina Studio — مجتمع تقني يهتم بالأمن السيبراني والذكاء الاصطناعي وتطوير المواقع والتطبيقات وMinecraft.">
+  <title>Karina Studio — Build Beyond Limits</title>
+  <style>
+    :root{--bg:#090711;--panel:#110e1c;--panel2:#171126;--purple:#a855f7;--pink:#ec4899;--cyan:#67e8f9;--text:#f5f1ff;--muted:#b6adc9;--line:rgba(192,132,252,.22);--glow:0 0 35px rgba(168,85,247,.18)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(109,40,217,.18),transparent 38%),radial-gradient(ellipse at 0% 40%,rgba(236,72,153,.08),transparent 30%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.7}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.12;background-image:linear-gradient(rgba(168,85,247,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.18) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,calc(100% - 40px));margin:auto}
+    .nav-wrap{position:sticky;top:0;z-index:10;background:rgba(9,7,17,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.2px}
+    .logo{width:42px;height:42px;display:grid;place-items:center;border:1px solid #c084fc;border-radius:13px;color:#fff;background:linear-gradient(135deg,rgba(168,85,247,.3),rgba(236,72,153,.14));box-shadow:0 0 22px rgba(168,85,247,.2);font-size:20px}
+    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;direction:ltr}
+    .nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:#e9b7ff}.nav-actions{display:flex;gap:9px;align-items:center}
+    button,.btn{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:10px 15px;border-radius:12px;font:inherit;font-weight:700;cursor:pointer;transition:.2s}
+    button:hover,.btn:hover{border-color:var(--purple);transform:translateY(-2px);box-shadow:var(--glow)}
+    .btn-primary{border:0;background:linear-gradient(100deg,#9333ea,#c026d3);box-shadow:0 8px 28px rgba(168,85,247,.23)}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:44px;padding-top:68px;padding-bottom:75px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:rgba(168,85,247,.08);border-radius:999px;padding:7px 13px;color:#e9c8ff;font-size:13px}
+    .dot{width:7px;height:7px;border-radius:50%;background:#c084fc;box-shadow:0 0 12px #c084fc}
+    h1{font-size:clamp(42px,6vw,76px);line-height:1.08;letter-spacing:-2px;margin:24px 0 18px;font-weight:900}
+    .gradient{background:linear-gradient(100deg,#f5d0fe,#c084fc 45%,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:610px;color:var(--muted);font-size:17px;margin:0 0 27px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .stats{display:flex;gap:25px;flex-wrap:wrap;margin-top:35px}
+    .stat strong{display:block;font-size:19px}.stat span{color:var(--muted);font-size:12px}
+    .visual{position:relative;min-height:390px;display:grid;place-items:center}
+    .orbit{width:min(360px,80vw);aspect-ratio:1;border:1px solid rgba(192,132,252,.4);border-radius:50%;display:grid;place-items:center;position:relative;box-shadow:inset 0 0 65px rgba(168,85,247,.08),0 0 60px rgba(168,85,247,.08)}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed rgba(192,132,252,.28);border-radius:50%}
+    .orbit:before{inset:27px}.orbit:after{inset:58px;border-style:solid;opacity:.65}
+    .core{width:145px;height:145px;display:grid;place-items:center;border-radius:36px;transform:rotate(-8deg);background:linear-gradient(145deg,#26113f,#120c20);border:1px solid #c084fc;box-shadow:0 0 55px rgba(168,85,247,.35),inset 0 0 30px rgba(168,85,247,.16);font-size:62px;color:#e9d5ff}
+    .float-tag{position:absolute;padding:10px 13px;background:rgba(17,14,28,.9);border:1px solid var(--line);border-radius:12px;color:#e9d5ff;font-size:12px;box-shadow:var(--glow)}
+    .tag1{top:13%;right:-2%}.tag2{bottom:17%;left:-3%}.tag3{bottom:2%;right:23%}
+    section{padding:78px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 38px}.kicker{color:#d8a7ff;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}.section-head h2{font-size:clamp(29px,4vw,44px);margin:8px 0 12px;line-height:1.2}.section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .card{background:linear-gradient(145deg,rgba(23,17,38,.96),rgba(13,10,22,.95));border:1px solid var(--line);border-radius:19px;padding:23px;transition:.25s;min-height:220px}
+    .card:hover{transform:translateY(-6px);border-color:rgba(192,132,252,.65);box-shadow:var(--glow)}
+    .iconbox{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:rgba(168,85,247,.13);border:1px solid var(--line);font-size:23px;margin-bottom:17px}
+    .card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:center}
+    .about-panel{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(35,18,55,.6),rgba(15,11,24,.9));padding:30px;box-shadow:var(--glow)}
+    .about-panel .big{font-size:38px;font-weight:900;line-height:1.15}.about-panel p,.about-copy p{color:var(--muted)}
+    .check-list{display:grid;gap:12px;margin-top:20px}.check{display:flex;gap:10px;align-items:flex-start}.check b{color:#d8b4fe}
+    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel)}
+    .project-top{height:125px;display:grid;place-items:center;font-size:43px;background:radial-gradient(circle at 50% 100%,rgba(168,85,247,.35),transparent 60%),linear-gradient(135deg,#171027,#0b0913);border-bottom:1px solid var(--line)}
+    .project-content{padding:20px}.project-content h3{margin:0 0 8px}.project-content p{color:var(--muted);font-size:14px;margin:0}
+    .tag-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.pill{font-size:11px;color:#e9d5ff;border:1px solid var(--line);padding:4px 9px;border-radius:999px}
+    .cta{border:1px solid rgba(192,132,252,.35);border-radius:25px;padding:42px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(168,85,247,.2),transparent 65%),var(--panel);box-shadow:var(--glow)}
+    .cta h2{font-size:clamp(28px,4vw,42px);margin:0 0 10px}.cta p{color:var(--muted);margin:0 auto 23px;max-width:620px}
+    footer{padding:27px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.socials{display:flex;gap:15px}.socials a:hover{color:#e9b7ff}
+    .ltr{direction:ltr;text-align:left}
+    @media(max-width:850px){.nav-links{gap:12px}.hero{grid-template-columns:1fr;padding-top:55px;gap:10px}.visual{min-height:350px}.cards{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.container{width:min(100% - 28px,1120px)}nav{min-height:68px}.nav-links{display:none}.brand{font-size:14px}.logo{width:38px;height:38px}.hero{min-height:auto;padding-top:48px;padding-bottom:48px}h1{letter-spacing:-1px}.hero p{font-size:15px}.visual{min-height:300px}.orbit{width:275px}.core{width:112px;height:112px;font-size:48px;border-radius:28px}.tag1{right:-1%;top:10%}.tag2{left:-1%;bottom:13%}.tag3{right:20%;bottom:0}.stats{gap:17px}.cards,.project-grid{grid-template-columns:1fr}.card{min-height:0}section{padding:58px 0}.cta{padding:28px 18px}.footer-inner{justify-content:center;text-align:center}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="nav-wrap"><div class="container"><nav>
+    <a class="brand" href="#home" aria-label="Karina Studio home"><span class="logo">K</span><span>Karina Studio<small>BUILD BEYOND LIMITS</small></span></a>
+    <div class="nav-links"><a href="#home" data-i="navHome">الرئيسية</a><a href="#about" data-i="navAbout">من نحن</a><a href="#services" data-i="navServices">مجالاتنا</a><a href="#projects" data-i="navProjects">مشاريعنا</a><a href="#contact" data-i="navContact">تواصل</a></div>
+    <div class="nav-actions"><button id="langBtn" type="button" aria-label="Switch language">EN / ع</button><a class="btn btn-primary" href="#contact" data-i="navJoin">انضم إلينا ↗</a></div>
+  </nav></div></div>
+
+  <main>
+    <header class="container hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span><span data-i="eyebrow">مجتمع تقني • أفكار تصنع المستقبل</span></div>
+        <h1><span data-i="heroLine1">نصنع التقنية.</span><br><span class="gradient" data-i="heroLine2">ونتجاوز الحدود.</span></h1>
+        <p data-i="heroText">Karina Studio مساحة للمبدعين والمطورين المهتمين بالأمن السيبراني والذكاء الاصطناعي وتطوير المواقع والتطبيقات وعوالم Minecraft. نتعلم، نبني، ونتشارك المعرفة.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#about" data-i="heroPrimary">اكتشف Karina Studio ↗</a><a class="btn" href="#projects" data-i="heroSecondary">استكشف المجالات</a></div>
+        <div class="stats"><div class="stat"><strong>01<span class="gradient">/</span></strong><span data-i="stat1">تعلّم مستمر</span></div><div class="stat"><strong>∞</strong><span data-i="stat2">أفكار قابلة للتطوير</span></div><div class="stat"><strong>24<span class="gradient">/</span>7</strong><span data-i="stat3">فضول تقني</span></div></div>
+      </div>
+      <div class="visual" aria-hidden="true"><div class="orbit"><div class="core">K</div></div><div class="float-tag tag1">⌘ <span data-i="float1">ابتكار رقمي</span></div><div class="float-tag tag2">◈ <span data-i="float2">أفكار آمنة</span></div><div class="float-tag tag3">⌁ AI / DEV</div></div>
+    </header>
+
+    <section id="about"><div class="container about-grid">
+      <div class="about-panel"><div class="kicker" data-i="aboutKicker">من نحن</div><div class="big"><span data-i="aboutBig1">مجتمع يبني</span><br><span class="gradient" data-i="aboutBig2">المستقبل الرقمي.</span></div><p data-i="aboutPanelText">نتعامل مع التقنية كمساحة للتعلّم والإبداع والتعاون، ونحوّل الأفكار إلى تجارب ومشاريع قابلة للتطوير.</p></div>
+      <div class="about-copy"><div class="kicker" data-i="missionKicker">رؤيتنا</div><h2 data-i="missionTitle">التعلّم معاً، والبناء بشغف.</h2><p data-i="missionText">Karina Studio مجتمع تقني يربط بين التطوير والإبداع. نهدف إلى مشاركة المعرفة، وتجربة أدوات جديدة، وتطوير مشاريع رقمية مفيدة ضمن بيئة تحترم التعاون والأمان.</p><div class="check-list"><div class="check"><b>✦</b><span data-i="check1">التعلّم العملي ومشاركة المعرفة</span></div><div class="check"><b>✦</b><span data-i="check2">الاهتمام بالأمان والجودة</span></div><div class="check"><b>✦</b><span data-i="check3">التعاون على أفكار ومشاريع جديدة</span></div></div></div>
+    </div></section>
+
+    <section id="services"><div class="container"><div class="section-head"><div class="kicker" data-i="servicesKicker">ماذا نحب أن نبني؟</div><h2 data-i="servicesTitle">مجالاتنا التقنية</h2><p data-i="servicesText">مساحات متنوعة للاكتشاف والتجربة والتطوير.</p></div>
+      <div class="cards">
+        <article class="card"><div class="iconbox">⌘</div><h3 data-i="service1Title">الأمن السيبراني</h3><p data-i="service1Text">التوعية الأمنية، فهم المخاطر، ومبادئ بناء أنظمة وتطبيقات أكثر أماناً.</p></article>
+        <article class="card"><div class="iconbox">✳</div><h3 data-i="service2Title">الذكاء الاصطناعي</h3><p data-i="service2Text">استكشاف أدوات الذكاء الاصطناعي وبناء تجارب ومساعدات رقمية.</p></article>
+        <article class="card"><div class="iconbox">〈/〉</div><h3 data-i="service3Title">المواقع والتطبيقات</h3><p data-i="service3Text">تصميم وتطوير تجارب ويب وتطبيقات عملية وسهلة الاستخدام.</p></article>
+        <article class="card"><div class="iconbox">▦</div><h3 data-i="service4Title">Minecraft Development</h3><p data-i="service4Text">تطوير السيرفرات والإضافات وتجارب اللعب والمجتمعات.</p></article>
+      </div>
+    </div></section>
+
+    <section id="projects"><div class="container"><div class="section-head"><div class="kicker" data-i="projectsKicker">من الفكرة إلى التنفيذ</div><h2 data-i="projectsTitle">مساحات للمشاريع</h2><p data-i="projectsText">هذه بطاقات تعريفية للمجالات؛ أضف روابط مشاريعك الفعلية عند جاهزيتها.</p></div>
+      <div class="project-grid">
+        <article class="project"><div class="project-top">◈</div><div class="project-content"><h3 data-i="project1Title">AI Lab</h3><p data-i="project1Text">تجارب وأفكار حول المساعدات الذكية وأدوات الإنتاجية.</p><div class="tag-list"><span class="pill">AI</span><span class="pill">Research</span></div></div></article>
+        <article class="project"><div class="project-top">⌘</div><div class="project-content"><h3 data-i="project2Title">Security Lab</h3><p data-i="project2Text">تعلّم الأمن الرقمي وممارسات التطوير الآمن بصورة مسؤولة.</p><div class="tag-list"><span class="pill">Security</span><span class="pill">Learning</span></div></div></article>
+        <article class="project"><div class="project-top">▦</div><div class="project-content"><h3 data-i="project3Title">Minecraft Studio</h3><p data-i="project3Text">أفكار لتطوير السيرفرات والإضافات وتجارب اللاعبين.</p><div class="tag-list"><span class="pill">Minecraft</span><span class="pill">Development</span></div></div></article>
+      </div>
+    </div></section>
+
+    <section id="contact"><div class="container"><div class="cta"><div class="kicker" data-i="contactKicker">لنصنع شيئاً مميزاً</div><h2 data-i="contactTitle">عندك فكرة؟ خلّينا نطوّرها.</h2><p data-i="contactText">تابع Karina Studio وتواصل مع المجتمع عبر الروابط الرسمية. أضف روابطك الفعلية في الكود قبل نشر الموقع.</p><div class="hero-actions" style="justify-content:center"><a class="btn btn-primary" href="https://github.com/" target="_blank" rel="noopener noreferrer" data-i="githubBtn">GitHub ↗</a><a class="btn" href="https://discord.com/" target="_blank" rel="noopener noreferrer" data-i="discordBtn">Discord ↗</a></div></div></div></section>
+  </main>
+
+  <footer><div class="container footer-inner"><a class="brand" href="#home"><span class="logo">K</span><span>Karina Studio<small>BUILD BEYOND LIMITS</small></span></a><span><span data-i="footerText">صُنع بشغف للتقنية.</span> © <span id="year"></span> Karina Studio</span><div class="socials"><a href="#services" data-i="footerServices">المجالات</a><a href="#projects" data-i="footerProjects">المشاريع</a><a href="#contact" data-i="footerContact">التواصل</a></div></div></footer>
+  <script>
+    const translations = {
+      ar:{navHome:"الرئيسية",navAbout:"من نحن",navServices:"مجالاتنا",navProjects:"مشاريعنا",navContact:"تواصل",navJoin:"انضم إلينا ↗",eyebrow:"مجتمع تقني • أفكار تصنع المستقبل",heroLine1:"نصنع التقنية.",heroLine2:"ونتجاوز الحدود.",heroText:"Karina Studio مساحة للمبدعين والمطورين المهتمين بالأمن السيبراني والذكاء الاصطناعي وتطوير المواقع والتطبيقات وعوالم Minecraft. نتعلم، نبني، ونتشارك المعرفة.",heroPrimary:"اكتشف Karina Studio ↗",heroSecondary:"استكشف المجالات",stat1:"تعلّم مستمر",stat2:"أفكار قابلة للتطوير",stat3:"فضول تقني",float1:"ابتكار رقمي",float2:"أفكار آمنة",aboutKicker:"من نحن",aboutBig1:"مجتمع يبني",aboutBig2:"المستقبل الرقمي.",aboutPanelText:"نتعامل مع التقنية كمساحة للتعلّم والإبداع والتعاون، ونحوّل الأفكار إلى تجارب ومشاريع قابلة للتطوير.",missionKicker:"رؤيتنا",missionTitle:"التعلّم معاً، والبناء بشغف.",missionText:"Karina Studio مجتمع تقني يربط بين التطوير والإبداع. نهدف إلى مشاركة المعرفة، وتجربة أدوات جديدة، وتطوير مشاريع رقمية مفيدة ضمن بيئة تحترم التعاون والأمان.",check1:"التعلّم العملي ومشاركة المعرفة",check2:"الاهتمام بالأمان والجودة",check3:"التعاون على أفكار ومشاريع جديدة",servicesKicker:"ماذا نحب أن نبني؟",servicesTitle:"مجالاتنا التقنية",servicesText:"مساحات متنوعة للاكتشاف والتجربة والتطوير.",service1Title:"الأمن السيبراني",service1Text:"التوعية الأمنية، فهم المخاطر، ومبادئ بناء أنظمة وتطبيقات أكثر أماناً.",service2Title:"الذكاء الاصطناعي",service2Text:"استكشاف أدوات الذكاء الاصطناعي وبناء تجارب ومساعدات رقمية.",service3Title:"المواقع والتطبيقات",service3Text:"تصميم وتطوير تجارب ويب وتطبيقات عملية وسهلة الاستخدام.",service4Title:"تطوير Minecraft",service4Text:"تطوير السيرفرات والإضافات وتجارب اللعب والمجتمعات.",projectsKicker:"من الفكرة إلى التنفيذ",projectsTitle:"مساحات للمشاريع",projectsText:"هذه بطاقات تعريفية للمجالات؛ أضف روابط مشاريعك الفعلية عند جاهزيتها.",project1Title:"مختبر الذكاء الاصطناعي",project1Text:"تجارب وأفكار حول المساعدات الذكية وأدوات الإنتاجية.",project2Title:"مختبر الأمن",project2Text:"تعلّم الأمن الرقمي وممارسات التطوير الآمن بصورة مسؤولة.",project3Title:"استوديو Minecraft",project3Text:"أفكار لتطوير السيرفرات والإضافات وتجارب اللاعبين.",contactKicker:"لنصنع شيئاً مميزاً",contactTitle:"عندك فكرة؟ خلّينا نطوّرها.",contactText:"تابع Karina Studio وتواصل مع المجتمع عبر الروابط الرسمية. أضف روابطك الفعلية في الكود قبل نشر الموقع.",githubBtn:"GitHub ↗",discordBtn:"Discord ↗",footerText:"صُنع بشغف للتقنية.",footerServices:"المجالات",footerProjects:"المشاريع",footerContact:"التواصل"},
+      en:{navHome:"Home",navAbout:"About",navServices:"What We Do",navProjects:"Projects",navContact:"Contact",navJoin:"Join Us ↗",eyebrow:"TECH COMMUNITY • IDEAS FOR THE FUTURE",heroLine1:"We build technology.",heroLine2:"Beyond the limits.",heroText:"Karina Studio is a space for creators and developers interested in cybersecurity, artificial intelligence, web and app development, and Minecraft. We learn, build, and share knowledge.",heroPrimary:"Discover Karina Studio ↗",heroSecondary:"Explore Our Fields",stat1:"Continuous learning",stat2:"Ideas to grow",stat3:"Tech curiosity",float1:"Digital innovation",float2:"Safer ideas",aboutKicker:"WHO WE ARE",aboutBig1:"A community building",aboutBig2:"the digital future.",aboutPanelText:"We see technology as a space for learning, creativity, and collaboration—turning ideas into experiences and projects that can grow.",missionKicker:"OUR VISION",missionTitle:"Learn together. Build with purpose.",missionText:"Karina Studio is a tech community connecting development and creativity. We aim to share knowledge, explore new tools, and develop useful digital projects in an environment that values collaboration and safety.",check1:"Hands-on learning and knowledge sharing",check2:"Security and quality matter",check3:"Collaborating on new ideas and projects",servicesKicker:"WHAT WE LOVE TO BUILD",servicesTitle:"Our Tech Fields",servicesText:"Different spaces to explore, experiment, and develop.",service1Title:"Cybersecurity",service1Text:"Security awareness, understanding risks, and principles for building safer systems and apps.",service2Title:"Artificial Intelligence",service2Text:"Exploring AI tools and building digital assistants and experiments.",service3Title:"Websites & Apps",service3Text:"Designing and developing practical, user-friendly web experiences and applications.",service4Title:"Minecraft Development",service4Text:"Server development, plugins, gameplay experiences, and communities.",projectsKicker:"FROM IDEA TO IMPLEMENTATION",projectsTitle:"Project Spaces",projectsText:"These are introductory cards. Add your real project links when they are ready.",project1Title:"AI Lab",project1Text:"Experiments and ideas around intelligent assistants and productivity tools.",project2Title:"Security Lab",project2Text:"Learning digital security and responsible secure-development practices.",project3Title:"Minecraft Studio",project3Text:"Ideas for servers, plugins, and player experiences.",contactKicker:"LET'S MAKE SOMETHING",contactTitle:"Have an idea? Let's build it.",contactText:"Follow Karina Studio and connect with the community through official links. Replace the placeholder links in the code before publishing.",githubBtn:"GitHub ↗",discordBtn:"Discord ↗",footerText:"Made with a passion for tech.",footerServices:"Fields",footerProjects:"Projects",footerContact:"Contact"}
+    };
+    let currentLang = "ar";
+    const langBtn = document.getElementById("langBtn");
+    function setLanguage(lang){
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.body.classList.toggle("ltr", lang === "en");
+      document.querySelectorAll("[data-i]").forEach(el=>{
+        const key = el.getAttribute("data-i");
+        if(translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+      });
+      langBtn.textContent = lang === "ar" ? "EN / ع" : "عربي / EN";
+      langBtn.setAttribute("aria-label", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
+    }
+    langBtn.addEventListener("click",()=>setLanguage(currentLang === "ar" ? "en" : "ar"));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
